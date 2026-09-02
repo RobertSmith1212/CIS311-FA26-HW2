@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elm Street Food Pantry</title>
+  <link rel="stylesheet" href="styles.css">
+  <!--
+    CIS 311 · HW2 — SEMANTIC RESCUE
+
+    The styling of this page is fine. The STRUCTURE is the problem.
+
+    Your job: rebuild the markup with correct semantics. When you are done,
+    the rendered page should look essentially the same as it does now.
+
+    NOTE ON THE FORM: every control on this page is <input type="text">, which
+    is almost always the wrong answer. Read what each field is ASKING for and
+    choose the control that actually fits. Some become a different input type.
+    Some stop being <input> altogether. Exactly one is already correct.
+    The form is the only place where the rendered result is allowed to change.
+  -->
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-name">Elm Street Food Pantry</div>
+      <div class="brand-tag">A ministry of Elm Street Church of Christ · Henderson, TN</div>
+    </div>
+    <div class="searchbar">
+      <div class="field-label">Look something up on this site</div>
+      <input type="text" class="input" placeholder="Search">
+      <div class="btn btn-small" onclick="runSearch()">Go</div>
+    </div>
+    <div class="nav">
+      <span class="nav-item" onclick="location.href='#hours'">Hours</span>
+      <span class="nav-item" onclick="location.href='#need'">What We Need</span>
+      <span class="nav-item" onclick="location.href='#volunteer'">Volunteer</span>
+      <span class="nav-item" onclick="location.href='#faq'">FAQ</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-title">No one in Chester County should go hungry.</div>
+    <div class="hero-sub">
+      We distribute groceries every Tuesday and Saturday. No appointment, no paperwork,
+      no questions about why you came.
+    </div>
+    <button class="btn btn-primary" onclick="location.href='#hours'">See This Week's Hours</button>
+  </div>
+
+  <div class="wrap">
+
+    <div class="section" id="hours">
+      <div class="h2">Distribution Hours</div>
+      <div class="body-text">
+        Come to the fellowship hall door on the <span class="bold">north side</span> of the building.
+        Parking is available in the gravel lot. If you need help carrying boxes to your car, just ask —
+        that is what the volunteers in orange vests are there for.
+      </div>
+
+      <div class="schedule">
+        <div class="schedule-row schedule-head">
+          <div class="schedule-cell">Day</div>
+          <div class="schedule-cell">Time</div>
+          <div class="schedule-cell">Notes</div>
+        </div>
+        <div class="schedule-row">
+          <div class="schedule-cell">Tuesday</div>
+          <div class="schedule-cell">4:00 – 7:00 p.m.</div>
+          <div class="schedule-cell">Evening hours for working families</div>
+        </div>
+        <div class="schedule-row">
+          <div class="schedule-cell">Saturday</div>
+          <div class="schedule-cell">8:00 – 11:00 a.m.</div>
+          <div class="schedule-cell">Busiest day; fresh produce when available</div>
+        </div>
+        <div class="schedule-row">
+          <div class="schedule-cell">First Sunday</div>
+          <div class="schedule-cell">12:30 – 2:00 p.m.</div>
+          <div class="schedule-cell">Monthly diaper and hygiene distribution</div>
+        </div>
+      </div>
+
+      <div class="note">
+        Closed November 26 for Thanksgiving. Extra distribution added Tuesday, November 24.
+      </div>
+    </div>
+
+    <div class="section" id="need">
+      <div class="h2">What We Need Most</div>
+      <div class="body-text">
+        We can buy staples in bulk cheaply, so cash goes further than cans. But if you would
+        rather bring food, these four items run out first every single week:
+      </div>
+      <div class="need-list">
+        <div class="need-item">Peanut butter</div>
+        <div class="need-item">Canned chicken and tuna</div>
+        <div class="need-item">Diapers, sizes 4 and 5</div>
+        <div class="need-item">Laundry detergent</div>
+      </div>
+
+      <div class="figure">
+        <img src="https://placehold.co/640x360" width="640" height="360">
+        <div class="figure-caption">
+          Volunteers sorting the Saturday delivery, October 2025.
+        </div>
+      </div>
+
+      <img src="divider-leaves.png" alt="decorative leaf divider image" class="divider">
+
+      <div class="quote">
+        "I came in for a box of groceries and I left with people who knew my name.
+        I have been volunteering here for two years now."
+        <div class="quote-source">— Marcy T., volunteer</div>
+      </div>
+    </div>
+
+    <div class="section" id="volunteer">
+      <div class="h2">Volunteer With Us</div>
+      <div class="body-text">
+        Most volunteers give two hours a month. Training takes about fifteen minutes and
+        happens on your first shift. Students: we sign service-hour forms.
+      </div>
+
+      <div class="h4">Sign Up for a Shift</div>
+
+      <div class="form">
+
+        <div class="field">
+          <input type="text" class="input" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <input type="text" class="input" placeholder="Email address">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Phone (optional)</div>
+          <input type="text" class="input" placeholder="(731) 555-0000">
+        </div>
+
+        <div class="field">
+          <div class="field-label">If you are signing up on behalf of a church or student group, what is their website? (optional)</div>
+          <input type="text" class="input" placeholder="https://">
+        </div>
+
+        <div class="field">
+          <div class="field-label">What day would you like your first shift to be?</div>
+          <input type="text" class="input" placeholder="MM/DD/YYYY">
+        </div>
+
+        <div class="field">
+          <div class="field-label">What time can you usually arrive?</div>
+          <input type="text" class="input" placeholder="e.g. 4:00 PM">
+        </div>
+
+        <div class="field">
+          <div class="field-label">About how many hours can you give each month? Please enter a whole number between 1 and 20.</div>
+          <input type="text" class="input" placeholder="2">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Which shift works for you? Pick one: Tuesday evening, Saturday morning, or either one.</div>
+          <input type="text" class="input" placeholder="Type Tuesday, Saturday, or either">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Which of these can you help with? Check all that apply: heavy lifting, driving a delivery route, speaking Spanish, data entry.</div>
+          <input type="text" class="input" placeholder="List everything that applies">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Which team would you like to join? Choose one from our floor teams (sorting, stocking, produce) or our front teams (intake desk, delivery, kids&rsquo; corner).</div>
+          <input type="text" class="input" placeholder="Type a team name">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Anything we should know? Lifting limits, group size, scheduling conflicts &mdash; take as much room as you need.</div>
+          <input type="text" class="input" placeholder="Tell us here">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Students: if you need a service-hour form signed, attach it here. We accept PDF or an image.</div>
+          <input type="text" class="input" placeholder="No file chosen">
+        </div>
+
+        <div class="field">
+          <div class="field-label">Would you like us to text you when a shift needs filling? Yes or no.</div>
+          <input type="text" class="input" placeholder="Yes or no">
+        </div>
+
+        <div class="btn btn-primary" onclick="submitForm()">Sign Me Up</div>
+      </div>
+    </div>
+
+    <div class="section" id="faq">
+      <div class="h2">Questions People Ask</div>
+
+      <div class="h4">Do I have to prove I need help?</div>
+      <div class="body-text">
+        No. We do not ask for income verification, ID, or a referral. Take what your household needs.
+      </div>
+
+      <div class="h4">How often can I come?</div>
+      <div class="body-text">
+        Once a week. The monthly diaper distribution is separate and does not count against that.
+      </div>
+
+      <div class="h4">Can I donate food that is past the "best by" date?</div>
+      <div class="body-text">
+        Shelf-stable items are usually fine past that date, but we cannot accept anything opened,
+        home-canned, or refrigerated. When in doubt, call first.
+      </div>
+
+      <div class="h4">Is this only for church members?</div>
+      <div class="body-text">
+        No. The pantry serves all of Chester County. You will never be asked where you worship.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-contact">
+      412 Elm Street, Henderson, TN 38340<br>
+      <span class="link-ish" onclick="location.href='tel:7315550142'">(731) 555-0142</span> ·
+      <span class="link-ish" onclick="location.href='mailto:pantry@example.org'">pantry@example.org</span>
+    </div>
+    <div class="footer-note">
+      Last updated August 2026. Elm Street Food Pantry is a 501(c)(3) ministry.
+    </div>
+  </div>
+
+</body>
+</html>
